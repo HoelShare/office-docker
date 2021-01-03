@@ -20,5 +20,7 @@ Run `./build.sh` to create a new Version
                 args:
                     API_BASE_URL: https://office.hoelshare.dev
    ```
-1. [OPTIONAL] build docker container `docker-compose build`
+1. [OPTIONAL] build docker container
+   1. initialize submodule first `git submodule update --init`
+   1. `docker-compose build`
 1. start docker containers `docker-compose up`
