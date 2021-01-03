@@ -3,7 +3,16 @@
 Repository to use Office Project with docker
 
 ## Build new version
+### Latest
 Run `./build.sh` to create a new Version
+
+### Specific Version
+Make sure the [office-core](https://github.com/HoelShare/office-core) and [office-ui](https://github.com/HoelShare/office-ui) Repository contains the specific version tag
+
+Run `./build.sh {tag}` e.g. `./build.sh 0.0.1` to create a new Version.
+
+Tag will be created and pushed!
+
 
 ## Production use
 1. Create `docker-compose.override.yml` 
