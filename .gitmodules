@@ -1,0 +1,8 @@
+[submodule "core/src"]
+	path = core/src
+	url = git@github.com:HoelShare/office.git
+	branch = main
+[submodule "ui/src"]
+	path = ui/src
+	url = git@github.com:HoelShare/office-ui.git
+	branch = main
