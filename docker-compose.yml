@@ -12,10 +12,22 @@ services:
   ldap:
     image: rroemhild/test-openldap
 
+  saml:
+    image: kristophjunge/test-saml-idp
+    ports:
+      - "18080:8080"
+      - "18443:8443"
+    environment:
+      SIMPLESAMLPHP_SP_ENTITY_ID: http://localhost:18080/simplesaml/saml2/idp/metadata.php
+      SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE: http://localhost:8090/api/saml/callback
+
   app:
     image: hoelshare/office-core:latest
     env_file:
       - core/.env
+    environment:
+      SIMPLESAMLPHP_CONFIG_DIR: /app/config
+      AUTH_SERVICE: saml
     depends_on:
       - database
       - ldap
