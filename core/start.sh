@@ -8,4 +8,6 @@ bin/console cache:clear
 bin/console doctrine:database:create
 bin/console doctrine:migrations:migrate -n
 
+bin/console saml:metadata-import
+
 /entrypoint supervisord
