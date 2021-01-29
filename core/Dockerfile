@@ -12,6 +12,7 @@ COPY src/composer.* /app/
 COPY src/symfony.lock /app/
 COPY wait-for-it.sh .
 COPY start.sh .
+COPY src/_dev_ops/supervisor/message-worker.conf /opt/docker/etc/supervisor.d/message-worker.conf
 
 RUN composer install --no-scripts && \
     composer dump-env prod --empty && \

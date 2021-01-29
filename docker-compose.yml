@@ -41,3 +41,6 @@ services:
     image: hoelshare/office-ui:latest
     ports:
       - 127.0.0.1:9043:80
+    environment:
+      VUE_APP_API_BASE_URL: http://localhost:9042
+      VUE_APP_AUTH_METHOD: saml
