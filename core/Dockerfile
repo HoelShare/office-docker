@@ -10,6 +10,8 @@ COPY src/public /app/public
 COPY src/src /app/src
 COPY src/composer.* /app/
 COPY src/symfony.lock /app/
+COPY src/cert/.gitignore /app/cert
+COPY src/metadata /app/metadata
 COPY wait-for-it.sh .
 COPY start.sh .
 COPY src/_dev_ops/supervisor/message-worker.conf /opt/docker/etc/supervisor.d/message-worker.conf
