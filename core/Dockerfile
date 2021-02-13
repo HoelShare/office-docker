@@ -2,6 +2,7 @@ FROM webdevops/php-apache:8.0
 WORKDIR /app
 ENV APP_ENV=prod
 ENV WEB_DOCUMENT_ROOT=/app/public
+ENV SIMPLESAMLPHP_CONFIG_DIR=/app/config
 
 COPY src/bin /app/bin
 COPY src/config /app/config
