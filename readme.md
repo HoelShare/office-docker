@@ -21,8 +21,17 @@ Tag will be created and pushed!
 1. Create `docker-compose.override.yml`
 2. Modify to your needs for example
 
+The proxy Service bundles the services and Exposes on port 80/443.
+It's possible to toggle SSL usage by env variable `USE_SSL` (place `fullchain.pem` & `privkey.pem` in certs folder).
+Configure Url with environment variable `APP_URL`.
+
 ```yaml
 services:
+    proxy:
+      environment:
+        APP_URL: office.hoelshare.dev
+        USE_SSL: 1
+
     app:
         env_file:
             - core/.env.local
@@ -51,7 +60,7 @@ services:
         - "18443:8443"
       environment:
         SIMPLESAMLPHP_SP_ENTITY_ID: http://localhost:18080/simplesaml/saml2/idp/metadata.php
-        SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE: http://localhost:8090/api/saml/callback
+        SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE: https://office.hoelshare.dev/api/saml/callback
 
 ```
 
