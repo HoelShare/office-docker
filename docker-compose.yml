@@ -19,9 +19,6 @@ services:
       - ui:ui
     volumes:
       - ./certs:/etc/ssl/private
-    ports:
-      - 80:80
-      - 443:443
 
   app:
     image: hoelshare/office-core:latest
