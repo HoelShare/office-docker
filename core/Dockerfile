@@ -22,4 +22,6 @@ RUN composer install --no-scripts && \
     chmod +x start.sh && \
     chmod +x wait-for-it.sh
 
+RUN chown -R 1000:1000 /app/public
+
 ENTRYPOINT ["./start.sh"]
